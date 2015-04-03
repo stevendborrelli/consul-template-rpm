@@ -50,6 +50,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %dir %attr(750, root, root) %{_sysconfdir}/%{name}
+%dir %attr(750, root, root) %{_sysconfdir}/%{name}/templates
 %if 0%{?fedora} >= 14 || 0%{?rhel} >= 7
 %{_unitdir}/%{name}.service
 %endif
