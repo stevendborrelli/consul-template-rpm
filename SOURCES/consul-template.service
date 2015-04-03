@@ -5,7 +5,7 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/usr/bin/consul-template -config /etc/consul-template
+ExecStart=/usr/bin/consul-template -config /etc/consul-template/config.d
 ExecReload=/bin/kill -HUP $MAINPID
 KillSignal=SIGINT
 

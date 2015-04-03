@@ -26,6 +26,7 @@ mkdir -p %{buildroot}/%{_bindir}
 cp consul-template %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/%{_sysconfdir}/%{name}
 mkdir -p %{buildroot}/%{_sysconfdir}/%{name}/templates
+mkdir -p %{buildroot}/%{_sysconfdir}/%{name}/config.d
 
 %if 0%{?fedora} >= 14 || 0%{?rhel} >= 7
 mkdir -p %{buildroot}/%{_unitdir}
@@ -51,6 +52,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %dir %attr(750, root, root) %{_sysconfdir}/%{name}
 %dir %attr(750, root, root) %{_sysconfdir}/%{name}/templates
+%dir %attr(750, root, root) %{_sysconfdir}/%{name}/config.d
 %if 0%{?fedora} >= 14 || 0%{?rhel} >= 7
 %{_unitdir}/%{name}.service
 %endif
